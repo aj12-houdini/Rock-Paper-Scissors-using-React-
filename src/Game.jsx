@@ -12,15 +12,11 @@ const items = [
   },
 ];
 function Game(props) {
-  console.log(props.called);
   const randomNumber = Math.floor(Math.random() * 3);
   const [gameStarts, changeState] = useState(false);
 
   const [item_id, changeItem] = useState(0);
 
-  function changeNumber() {
-    console.log(document.querySelector(".score").lastElementChild.innerText);
-  }
 
   function playGame(key) {
     changeState(true);

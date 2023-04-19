@@ -10,7 +10,6 @@ function Title(props) {
       changeTime(true);
     }, 1000);
     if (prevValue !== null && prevValue !== props.score) {
-      console.log(prevValue, props.score);
     }
     setValue(props.score);
   }, [prevValue]);
