@@ -1,0 +1,345 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap");
+
+$bg: hsl(214, 47%, 23%) to hsl(237, 49%, 15%);
+$header-outline: hsl(217, 16%, 45%);
+$score-text: hsl(229, 64%, 46%);
+$dark-text: hsl(229, 25%, 31%);
+$scissors-grad: hsl(39, 89%, 49%);
+$paper-grad: hsl(230, 89%, 62%);
+$rock-grad: hsl(349, 71%, 52%);
+
+@mixin icon($color) {
+  box-shadow: inset 0px 5px 2px grey, 0px 8px darken($color, 10%);
+}
+
+@mixin boxWin($color) {
+  box-shadow: inset 0px 5px 6px grey, 0px 8px darken($color, 15%),
+    0px 0px 0px 50px rgba(#ffff, 0.07), 0px 0px 0px 100px rgba(#ffff, 0.05),
+    0px 0px 0px 150px rgba(#ffff, 0.025) !important;
+  transition: box-shadow 0.3 ease-in;
+}
+
+@mixin topGrid() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .actionBox {
+    margin: 0 35px;
+  }
+}
+@mixin bottomGrid() {
+  margin: 35px 0;
+  display: flex;
+  justify-content: center;
+}
+body {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  background-image: linear-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+  background-repeat: no-repeat;
+  text-align: center;
+  height: 100vh;
+  overflow-y: hidden;
+}
+
+.title {
+  border: 2px solid $header-outline;
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+  margin: 30px auto;
+  align-items: center;
+  color: #ffff;
+  border-radius: 15px;
+  text-align: left;
+
+  .titleName {
+    margin: 15px 20px;
+  }
+  h1 {
+    margin: 0;
+    text-transform: uppercase;
+  }
+  .score {
+    padding: 12px 45px;
+    border-radius: 10px;
+    margin: 0 15px;
+    background-color: #ffff;
+    text-align: center;
+    h4 {
+      color: $score-text;
+      font-weight: 400;
+      font-size: 1rem;
+      margin: 0 0;
+    }
+    h1 {
+      // margin: 0;
+      color: $dark-text;
+      font-size: 3.5rem;
+    }
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+.gameBox {
+  margin-top: 50px;
+  position: relative;
+
+  .triangle {
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    margin-left: -150px;
+    top: 50px;
+  }
+}
+
+.borderWrap {
+  position: relative;
+  padding: 12px;
+  transform: scale(1);
+  transition: transform 0.3s ease-out;
+
+  &:hover {
+    transform: scale(1.1);
+    transition: transform 0.3 ease-in;
+  }
+}
+#scissors {
+  @include icon($scissors-grad);
+  border-color: $scissors-grad;
+}
+#rock {
+  @include icon($rock-grad);
+  border-color: $rock-grad;
+}
+#paper {
+  @include icon($paper-grad);
+  border-color: $paper-grad;
+}
+.top {
+  @include topGrid();
+}
+.bottom {
+  @include bottomGrid();
+}
+.actionBox {
+  display: inline-block;
+  width: 150px;
+  object-fit: contain;
+  height: 150px;
+  border-radius: 50%;
+  text-align: center;
+  background-color: white;
+  border: 18px solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  img {
+    height: 45%;
+    margin: auto;
+  }
+}
+
+.footer {
+  display: flex;
+  margin-top: 50px;
+  justify-content: flex-end;
+  color: #ffff;
+  .rules {
+    border-radius: 10px;
+    border: 1px solid #ffff;
+    padding: 9px 30px;
+    margin: 0 15px;
+    transition: all 0.4s ease-in;
+    cursor: pointer;
+    position: fixed;
+    bottom: 10px;
+    right: 5px;
+    &:hover {
+      background-color: $header-outline;
+      transition: all 0.4s ease-in;
+    }
+    h3 {
+      text-transform: uppercase;
+      font-weight: 300;
+      letter-spacing: 1.2px;
+      font-size: 1rem;
+    }
+  }
+}
+
+//Modal
+.ruleBox {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 0;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.5);
+  .rulesModal {
+    background-color: white;
+    position: relative;
+    margin: auto;
+    padding: 30px;
+    border-radius: 10px;
+
+    .heading {
+      margin-bottom: 30px;
+      display: flex;
+      text-align: left;
+      justify-content: space-between;
+      align-items: center;
+
+      h1 {
+        text-transform: uppercase;
+        display: block;
+      }
+      img {
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.ruleBox#showModal {
+  animation: opac 0.8s;
+  animation-fill-mode: forwards;
+  display: fixed;
+}
+.ruleBox#removeModal {
+  animation: show 0.8s;
+  animation-fill-mode: forwards;
+  display: none;
+}
+@keyframes opac {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes show {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+//GAMEPLAY
+.gameplay {
+  color: #ffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+
+  .picked {
+    margin-bottom: 50px;
+    letter-spacing: 1.4px;
+    font-size: 1.1rem;
+  }
+  .actionBox {
+    width: 175px;
+    height: 175px;
+    animation: opac 0.3s;
+  }
+  .play-again {
+    animation: opac 0.3s;
+    margin: 30px 35px;
+    h3 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+  }
+  .player,
+  .computer {
+    text-align: center;
+    text-transform: uppercase;
+    img {
+      display: block;
+    }
+  }
+}
+.btn-play {
+  padding: 10px 40px;
+  background-color: #ffff;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  letter-spacing: 1.2px;
+  color: $dark-text;
+  font-weight: 500;
+  transition: all 0.3s ease-out;
+
+  &:hover {
+    color: $rock-grad;
+    transition: all 0.3s ease-in;
+  }
+}
+
+#rock.winner {
+  @include boxWin($rock-grad);
+}
+
+#paper.winner {
+  @include boxWin($paper-grad);
+}
+
+#scissors.winner {
+  @include boxWin($scissors-grad);
+}
+
+@media screen and (max-width: 800px) {
+  body {
+    height: 100vh;
+  }
+  .footer {
+    justify-content: center;
+    .rules {
+      position: fixed;
+      bottom: 10px;
+    }
+  }
+  .title {
+    width: 90%;
+  }
+
+  .gameBox {
+    .borderWrap {
+      .actionBox {
+        margin: auto 13px;
+        width: 100px;
+        height: 100px;
+      }
+    }
+  }
+
+  .gameplay {
+    margin-top: 10px;
+    .picked {
+      margin-bottom: 10px;
+    }
+    flex-direction: column;
+    .actionBox {
+      width: 100px;
+      height: 100px;
+    }
+  }
+}

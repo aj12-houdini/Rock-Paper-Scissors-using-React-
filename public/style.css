@@ -1,0 +1,315 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap");
+body {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  background-image: linear-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+  background-repeat: no-repeat;
+  text-align: center;
+  height: 100vh;
+  overflow-y: hidden;
+}
+
+.title {
+  border: 2px solid hsl(217, 16%, 45%);
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+  margin: 30px auto;
+  align-items: center;
+  color: white;
+  border-radius: 15px;
+  text-align: left;
+}
+.title .titleName {
+  margin: 15px 20px;
+}
+.title h1 {
+  margin: 0;
+  text-transform: uppercase;
+}
+.title .score {
+  padding: 12px 45px;
+  border-radius: 10px;
+  margin: 0 15px;
+  background-color: white;
+  text-align: center;
+}
+.title .score h4 {
+  color: hsl(229, 64%, 46%);
+  font-weight: 400;
+  font-size: 1rem;
+  margin: 0 0;
+}
+.title .score h1 {
+  color: hsl(229, 25%, 31%);
+  font-size: 3.5rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.gameBox {
+  margin-top: 50px;
+  position: relative;
+}
+.gameBox .triangle {
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  margin-left: -150px;
+  top: 50px;
+}
+
+.borderWrap {
+  position: relative;
+  padding: 12px;
+  transform: scale(1);
+  transition: transform 0.3s ease-out;
+}
+.borderWrap:hover {
+  transform: scale(1.1);
+  transition: transform 0.3 ease-in;
+}
+
+#scissors {
+  box-shadow: inset 0px 5px 2px grey, 0px 8px #bc7e0b;
+  border-color: hsl(39, 89%, 49%);
+}
+
+#rock {
+  box-shadow: inset 0px 5px 2px grey, 0px 8px #b71f3b;
+  border-color: hsl(349, 71%, 52%);
+}
+
+#paper {
+  box-shadow: inset 0px 5px 2px grey, 0px 8px #183cf2;
+  border-color: hsl(230, 89%, 62%);
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.top .actionBox {
+  margin: 0 35px;
+}
+
+.bottom {
+  margin: 35px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.actionBox {
+  display: inline-block;
+  width: 150px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  height: 150px;
+  border-radius: 50%;
+  text-align: center;
+  background-color: white;
+  border: 18px solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.actionBox img {
+  height: 45%;
+  margin: auto;
+}
+
+.footer {
+  display: flex;
+  margin-top: 50px;
+  justify-content: flex-end;
+  color: white;
+}
+.footer .rules {
+  border-radius: 10px;
+  border: 1px solid white;
+  padding: 9px 30px;
+  margin: 0 15px;
+  transition: all 0.4s ease-in;
+  cursor: pointer;
+  position: fixed;
+  bottom: 10px;
+  right: 5px;
+}
+.footer .rules:hover {
+  background-color: hsl(217, 16%, 45%);
+  transition: all 0.4s ease-in;
+}
+.footer .rules h3 {
+  text-transform: uppercase;
+  font-weight: 300;
+  letter-spacing: 1.2px;
+  font-size: 1rem;
+}
+
+.ruleBox {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 0;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.ruleBox .rulesModal {
+  background-color: white;
+  position: relative;
+  margin: auto;
+  padding: 30px;
+  border-radius: 10px;
+}
+.ruleBox .rulesModal .heading {
+  margin-bottom: 30px;
+  display: flex;
+  text-align: left;
+  justify-content: space-between;
+  align-items: center;
+}
+.ruleBox .rulesModal .heading h1 {
+  text-transform: uppercase;
+  display: block;
+}
+.ruleBox .rulesModal .heading img {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.ruleBox#showModal {
+  animation: opac 0.8s;
+  animation-fill-mode: forwards;
+  display: fixed;
+}
+
+.ruleBox#removeModal {
+  animation: show 0.8s;
+  animation-fill-mode: forwards;
+  display: none;
+}
+
+@keyframes opac {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes show {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.gameplay {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+.gameplay .picked {
+  margin-bottom: 50px;
+  letter-spacing: 1.4px;
+  font-size: 1.1rem;
+}
+.gameplay .actionBox {
+  width: 175px;
+  height: 175px;
+  animation: opac 0.3s;
+}
+.gameplay .play-again {
+  animation: opac 0.3s;
+  margin: 30px 35px;
+}
+.gameplay .play-again h3 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+.gameplay .player,
+.gameplay .computer {
+  text-align: center;
+  text-transform: uppercase;
+}
+.gameplay .player img,
+.gameplay .computer img {
+  display: block;
+}
+
+.btn-play {
+  padding: 10px 40px;
+  background-color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  letter-spacing: 1.2px;
+  color: hsl(229, 25%, 31%);
+  font-weight: 500;
+  transition: all 0.3s ease-out;
+}
+.btn-play:hover {
+  color: hsl(349, 71%, 52%);
+  transition: all 0.3s ease-in;
+}
+
+#rock.winner {
+  box-shadow: inset 0px 5px 6px grey, 0px 8px #a11b34, 0px 0px 0px 50px rgba(255, 255, 255, 0.07), 0px 0px 0px 100px rgba(255, 255, 255, 0.05), 0px 0px 0px 150px rgba(255, 255, 255, 0.025) !important;
+  transition: box-shadow 0.3 ease-in;
+}
+
+#paper.winner {
+  box-shadow: inset 0px 5px 6px grey, 0px 8px #0d31e3, 0px 0px 0px 50px rgba(255, 255, 255, 0.07), 0px 0px 0px 100px rgba(255, 255, 255, 0.05), 0px 0px 0px 150px rgba(255, 255, 255, 0.025) !important;
+  transition: box-shadow 0.3 ease-in;
+}
+
+#scissors.winner {
+  box-shadow: inset 0px 5px 6px grey, 0px 8px #a46e0a, 0px 0px 0px 50px rgba(255, 255, 255, 0.07), 0px 0px 0px 100px rgba(255, 255, 255, 0.05), 0px 0px 0px 150px rgba(255, 255, 255, 0.025) !important;
+  transition: box-shadow 0.3 ease-in;
+}
+
+@media screen and (max-width: 800px) {
+  body {
+    height: 100vh;
+  }
+  .footer {
+    justify-content: center;
+  }
+  .footer .rules {
+    position: fixed;
+    bottom: 10px;
+  }
+  .title {
+    width: 90%;
+  }
+  .gameBox .borderWrap .actionBox {
+    margin: auto 13px;
+    width: 100px;
+    height: 100px;
+  }
+  .gameplay {
+    margin-top: 10px;
+    flex-direction: column;
+  }
+  .gameplay .picked {
+    margin-bottom: 10px;
+  }
+  .gameplay .actionBox {
+    width: 100px;
+    height: 100px;
+  }
+}/*# sourceMappingURL=style.css.map */
