@@ -37,4 +37,3 @@ To run the Rock Paper Scissors game locally, follow these steps:
 
 Contributions to the Rock Paper Scissors project are welcome! If you find any bugs or have suggestions for improvements, please open an issue or submit a pull request.
 
-## License
