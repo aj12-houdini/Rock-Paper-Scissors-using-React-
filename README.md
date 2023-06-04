@@ -1,70 +1,40 @@
-# Getting Started with Create React App
+# Rock Paper Scissors - React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a web application built with React that allows users to play the classic game of Rock Paper Scissors against the computer. The application provides an interactive interface where users can select their move, see the computer's move, and determine the winner based on the game rules.
 
-## Available Scripts
+![Game Screenshot](public\design\original\desktop-step-1.jpg)
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- User-friendly interface: The web application provides a visually appealing and intuitive interface for users to interact with.
+- Game logic: The application implements the game rules of Rock Paper Scissors, including determining the winner based on the moves chosen.
+- Computer opponent: The application a computer opponent that randomly selects its move.
+- Score tracking: The application keeps track of the user's score and displays it on the screen.
+- Responsive design: The application is designed to be responsive and can adapt to different screen sizes and devices.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Installation
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+To run the Rock Paper Scissors game locally, follow these steps:
 
-### `npm test`
+1. Clone the repository:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. Navigate to the project directory:
 
-### `npm run build`
+3. Install the required dependencies:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+4. Start the development server:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+5. Open a web browser and visit `http://localhost:3000` to access the application.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Usage
 
-### `npm run eject`
+1. Select your move (Rock, Paper, or Scissors) by clicking on the corresponding button.
+2. The computer opponent will randomly select its move.
+3. The result of the game (Win, Lose, or Draw) will be displayed on the screen.
+4. The score will be updated based on the outcome of each game.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Contributing
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Contributions to the Rock Paper Scissors project are welcome! If you find any bugs or have suggestions for improvements, please open an issue or submit a pull request.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## License
