@@ -2,7 +2,7 @@
 
 This is a web application built with React that allows users to play the classic game of Rock Paper Scissors against the computer. The application provides an interactive interface where users can select their move, see the computer's move, and determine the winner based on the game rules.
 
-![Game Screenshot](public\design\original\desktop-step-1.jpg)
+![Game Screenshot](../my-app/public/design/original/desktop-step-1.jpg)
 
 ## Features
 
